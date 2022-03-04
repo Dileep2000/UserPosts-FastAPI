@@ -87,7 +87,7 @@ def update_post(id:int, post: PostModel,db: Session = Depends(get_db),user: int 
   
   if post_query.first() == None:
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail=f"Post with id: {id} was not found")
-  if post_query.user_id != user.id:
+  if post_query.first().user_id != user.id:
     raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,detail=f"User is not allowed to Update this post")
 
   post_query.update(post.dict(),synchronize_session=False)#({'title':post.title,'content':post.content,'published':post.published},synchronize_session=False)
