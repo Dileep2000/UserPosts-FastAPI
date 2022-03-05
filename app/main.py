@@ -36,4 +36,4 @@ app.include_router(votes.router)
 
 @app.get("/")
 async def root():
-  return {'message':"Welcome to my API!!", "Creater":"Dileep","Contact":"e.dileep2000@gmail.com","Usage":"Go to /docs from the link where you are!"}
+  return {'message':"Welcome to my API!!", "Creater":"Dileep","Contact":"e.dileep2000@gmail.com","Usage":"Go to /docs from the link where you are!","Usage":"To see how to use the api wait for some time to work on it"}
